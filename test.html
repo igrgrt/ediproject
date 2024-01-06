@@ -10,13 +10,12 @@
 <body>
   <!-- Create a canvas element to render the chart -->
   <canvas id="genderPieChart" width="100" height="100"></canvas>
-  <canvas id="racePieChart" width="100" height="100"></canvas>
 
   <script>
     // Function to fetch data from JSON file
     async function fetchData() {
       try {
-        const response = await fetch('https://my.api.mockaroo.com/country.json?key=cf6b9050%27');
+        const response = await fetch('https://my.api.mockaroo.com/country.json?key=cf6b9050');
         const data = await response.json();
         return data;
       } catch (error) {
@@ -25,7 +24,7 @@
     }
 
     // Function to create the pie chart
-    async function createPieChartG() {
+    async function createPieChart() {
       const data = await fetchData();
 
       if (data) {
@@ -58,39 +57,6 @@
       }
     }
 
-    async function createPieChartR() {
-      const data = await fetchData();
-
-      if (data) {
-        // Extract gender data from JSON
-        const raceData = data.map(entry => entry.race);
-
-        // Count occurrences of each gender
-        const raceCounts = {};
-        raceData.forEach(race => {
-          raceCounts[race] = (raceCounts[race] || 0) + 1;
-        });
-
-        // Extract labels and values from gender counts
-        const labels = Object.keys(raceCounts);
-        const values = Object.values(raceCounts);
-
-        // Create the chart
-        const ctx = document.getElementById('racePieChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-          type: 'pie',
-          data: {
-            labels: labels,
-            datasets: [{
-              data: values,
-              backgroundColor: getRandomColors(labels.length),
-              borderWidth: 1,
-            }],
-          },
-        });
-      }
-    }
-
     // Helper function to generate random colors
     function getRandomColors(count) {
       const colors = [];
@@ -102,8 +68,7 @@
     }
 
     // Call the function to create the pie chart
-    createPieChartG();
-    createPieChartR();
+    createPieChart();
   </script>
 </body>
 </html>
