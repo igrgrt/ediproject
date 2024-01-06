@@ -23,3 +23,68 @@ h1 {
     text-align: center;
     margin-bottom: 20px;
 }
+
+.right-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #002912;
+    height: 100%;
+    width: 200px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-menu h3,
+.right-menu ul {
+    color: #ffe8c9;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.right-menu ul li {
+    margin-bottom: 10px;
+}
+
+.right-menu a {
+    text-decoration: none;
+    color: #ffe8c9;
+    font-size: 16px;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 2px solid #302109;
+    padding: 8px;
+    text-align: left;
+}
+
+.table tbody tr:hover {
+    background-color: #1e624b;
+    color: #e6c28f;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+  }
+  
+
+  a {
+    color: #1e624b;
+}
+
+a:hover {
+    color: #302109;
+}
