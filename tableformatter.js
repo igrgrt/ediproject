@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var thead = document.createElement('thead');
         var headerRow = document.createElement('tr');
 
-        // Ustalanie nagłówków
         var headers = ["Numer", "First name","Last name", "Speaks English?", "Height", "Gender", "Country", "Race", "Language"];
 
         headers.forEach(headerText => {
