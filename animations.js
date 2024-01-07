@@ -1,8 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    var opisLink = document.querySelector('.right-menu a[href="#tabela"]');
-
-
+    var egpLink = document.querySelector('.right-menu a[href="#egp"]');
+    var tabelaLink = document.querySelector('.right-menu a[href="#tabela"]');
+    var psdLink = document.querySelector('.right-menu a[href="#psd"]');
+    var ldataLink = document.querySelector('.right-menu a[href="#ldata"]');
+    var reaLink = document.querySelector('.right-menu a[href="#rea"]');
+    
     function smoothScroll(target, duration) {
         var targetElement = document.querySelector(target);
         var targetPosition = targetElement.getBoundingClientRect().top;
@@ -27,9 +30,36 @@ document.addEventListener("DOMContentLoaded", function () {
         requestAnimationFrame(animation);
     }
 
-
-    opisLink.addEventListener('click', function (e) {
+    egpLink.addEventListener('click', function (e) {
         e.preventDefault();
-        smoothScroll(opisLink.getAttribute('href'), 1000); 
+        smoothScroll(egpLink.getAttribute('href'), 1000);
     });
+
+    tabelaLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        smoothScroll(tabelaLink.getAttribute('href'), 1000);
+    });
+
+    psdLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        smoothScroll(psdLink.getAttribute('href'), 1000);
+    });
+
+    ldataLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        smoothScroll(ldataLink.getAttribute('href'), 1000);
+    });
+
+    reaLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        smoothScroll(reaLink.getAttribute('href'), 1000);
+    });
+
+    function scrollToSection(selector) {
+        var targetElement = document.querySelector(selector);
+        window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+        });
+    }
 });
